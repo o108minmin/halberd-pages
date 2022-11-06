@@ -1,0 +1,41 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import type {PhilosophyItem } from "~/types";
+
+const philosophy: Array<PhilosophyItem> = [
+  {
+    title: "多くのTTSに対応する",
+    description:
+      "今後増える多くのTTSがツールの恩恵を受けられるように",
+  },
+  {
+    title: "Windows, macOS, Ubuntuに対応する",
+    description:
+      "Windowsだけでなく、多くのOSがツールの恩恵を受けられるように",
+  },
+  {
+    title: "薄く小さくうまくやる",
+    description:
+      "特定の動画編集ソフトウェアへの部分最適化を避け、いつhalberdを離れてもいいように簡単な薄い処理を受け持ちます"
+  },
+];
+---
+
+<ContentSection title="Philosophy" id="philosophy">
+  <Fragment slot="lead">
+    今後も下記を目標にエンハンスしていきます
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      philosophy.map(({ title, description}) => (
+        <li class="flex flex-col items-center gap-4 p-6 border border-default bg-offset">
+          <p class="text-xl font-extrabold text-center">{title}</p>
+          <p class="text-sm text-center text-offset">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <Fragment>
+    halberdより便利なプラグイン、ワークフローがあれば乗り換えていけば良いと思います
+  </Fragment>
+</ContentSection>

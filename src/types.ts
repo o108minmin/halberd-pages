@@ -10,6 +10,11 @@ export interface FeatureItem {
   title: string;
 }
 
+export interface PhilosophyItem {
+  description: string;
+  title: string;
+}
+
 export interface FooterLink {
   description: string;
   icon: string;
